@@ -14,10 +14,14 @@ export async function createUser(req, res) {
     })
 
 
-      const token = jwt.sign({Email :req.body.Email},"secretCode")
-    console.log(token)
-        res.cookie("Token",token)
+    const token = jwt.sign({
+
+        Email: req.body.userEmail,
         
+    }, "secretCode")
+    console.log(token)
+    res.cookie("Token", token)
+
 
     await userdata.save();
 

@@ -4,7 +4,6 @@ import express from 'express';
 import { createHabit } from '../models/crateHabit.js'
 import { findpassword, finduser } from '../models/findingUser.js';
 import jwt from 'jsonwebtoken'
-import user from '../models/user.js';
 
 
 export const routes = express.Router();
@@ -28,8 +27,12 @@ routes.get('/login', (req, res) => {
     res.sendFile(filepath)
 })
 
-routes.post('/login', async (req, res) => {
+routes.get('/logout',(req,res)=>{
+    res.clearCookie("Token");
+    res.send("your loged out")
+})
 
+routes.post('/login', async (req, res) => {
 
     const findinguser = await finduser(req, res);
 
@@ -37,10 +40,13 @@ routes.post('/login', async (req, res) => {
         const findingpassword = await findpassword(req, res);
 
         console.log("user exists")
-        if (findingpassword) {
+        if (findingpassword==true) {
 
-            console.log("user perfect ")
-
+             const token = jwt.sign({
+                Email :req.body.userEmail
+            },"secretCode")
+                
+                    res.cookie("Token",token)
 
             const filepath = path.join(__dirname, '../public', 'homepage.html')
             res.sendFile(filepath)
@@ -92,6 +98,6 @@ routes.get('/home', (req, res) => {
 routes.post('/createHabit', (req, res) => {
 
     createHabit(req, res);
-    console.log("createHabit crated ")
+    console.log("Habit crated ")
     res.send("perfect")
 })
