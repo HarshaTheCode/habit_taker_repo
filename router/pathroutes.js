@@ -4,6 +4,7 @@ import express from 'express';
 import { createHabit } from '../models/crateHabit.js'
 import { findpassword, finduser } from '../models/findingUser.js';
 import jwt from 'jsonwebtoken'
+import { completedHabit } from '../models/createCompletedHabits.js';
 
 
 export const routes = express.Router();
@@ -12,8 +13,8 @@ const __dirname = import.meta.dirname;
 
 
 routes.get('/', (req, res) => {
-
-    res.send("landing page ")
+     const filepath=path.join(__dirname,'../public', 'landing.html')
+    res.sendFile(filepath)
 })
 
 routes.get('/register', (req, res) => {
@@ -100,4 +101,10 @@ routes.post('/createHabit', (req, res) => {
     createHabit(req, res);
     console.log("Habit crated ")
     res.send("perfect")
+})
+
+routes.post('/habitcompleted',(req,res)=>{
+
+    completedHabit(req,res);
+    res.send("habit completed")
 })

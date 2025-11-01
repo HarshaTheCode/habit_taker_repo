@@ -1,12 +1,12 @@
 import mongoose from "mongoose";
-import habits from "./habits.js";
+import habitcompleted from "./completedHabits.js";
 import user from "./user.js";
 import  jwt  from "jsonwebtoken";
 
 const mongouri = 'mongodb://localhost:27017/habitTraker';
 
 
-export async function createHabit( req,res){
+export async function completedHabit( req,res){
   const token = req.cookies.Token;
   const verify = jwt.verify(token ,"secretCode")
   console.log(verify)
@@ -16,25 +16,19 @@ export async function createHabit( req,res){
  const userdataid= await user.findOne({Email:verify.Email}).select("_id")
  
 console.log(userdataid)
+ 
+const userd= '6905a082f6e9b5dc81e1cc33';
+  const completedhabitdata=  new habitcompleted({
   
-  const habitdata=  new habits({
-    
+  
     userId: userdataid._id,
-    habit:req.body.habit,
-        isActive: "true"
-        
+     habitId: userd
+
     })
 
-    console.log(habitdata);
-
-
-    const  userHabitUpadte = await user.updateOne(
-      
-        {Email :verify.Email},
-      {$push:{habits:habitdata._id}},
-    );
+    console.log(completedhabitdata);
  
-   await habitdata.save(); 
+   await completedhabitdata.save(); 
     console.log("insertion completed")
 
 
