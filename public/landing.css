@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #000000;
+}
+
+.navbar {
+    color: #ffffff;
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background: #000000;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.navbar ul {
+
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+
+}
+
+.navbar ul li {
+    list-style: none;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white
+}
+
+.login-section {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn   {
+    font-size: 15px;
+    background: #2a67f4;
+    color: rgb(255, 255, 255);
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    justify-content: center;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+}
+
+.sign-in-btn{
+    font-size: 15px;
+    background: #2a67f4;
+    color: rgb(255, 255, 255);
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    justify-content: center;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+}
+
+.hero-section{
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    margin-left: 5%;
+    padding-left: 20%;
+    width: 80%;
+    font-size: 45px;
+}
+.hero-para{
+    margin-top: 15px;
+    color: white;
+    width: 70%;
+    padding-left: 20%;
+    margin-left: 12%;
+    font-size: 15px;
+    font-family: Inter, sans-serif;
+}
+
+.hero-para-2{
+    color: white;
+    width: 70%;
+    margin-top: 10px;
+    padding-left: 30%;
+    margin-left: 9%;
+    font-size: 15px;
+    font-family: Inter, sans-serif;
+    
+}
+.Try-now-section{
+    display: flex;
+    margin-top: 30px;
+    margin-left: 42%;
+}
+.try-now{
+    font-size: 20px;
+    background: #2a67f4;
+    color: rgb(255, 255, 255);
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    justify-content: center;
+    font-family: Inter, sans-serif;
+    cursor: pointer;
+}

@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Landing page </title>
+    <link rel="stylesheet" href="landing.css">
 </head>
 <body>
-    
-    hey this is our landing page 
-    <form action="/register" method="get" > 
-        <button type="submit">sign up </button>
-    </form>
+    <nav class="navbar">
 
+        <ul>
+            <li> <a href="./login.html">Home</a> </li>
+            <li><a href="./login.html"> about </a></li>
+            <li><a  href="./login.html"> contact </a></li>
+            
+        </ul>
+        <div class="login-section"> 
+
+            <form action="/register" method="get" > 
+                <button class="sign-in-btn" type="submit">Sign up </button>
+                
+            </form>
+            
+            <form action="/login" method="get" > 
+                <button class="login-btn"  type="submit">Log in  </button>
+            </form>
+            
+        </div>
+    </nav>
+
+    <div class="hero-section">
+        <h1> Build Better Habits,
+                       Build a Better Life  </h1>
     
+    </div>
+    <div>
+        <p class="hero-para">Harness the power of our personalized habit tracker app to streamline your </p>
+
+        <p class="hero-para-2"> everyday routines and achieve your goals.</p>
+    </div>
+<div class="Try-now-section">
+
     <form action="/login" method="get" > 
-        <button type="submit">log in  </button>
+        <button class="try-now"  type="submit">Try for free  </button>
     </form>
+</div>
 </body>
 </html>
