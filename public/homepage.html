@@ -1,59 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Habit traker</title>
+    <link rel="stylesheet" href="homepage.css">
 </head>
+
 <body>
+
+    <nav class="navbar">
+
+        <div class="logo-container">
+            <img src="" alt="this is logo img ">
+        </div>
+
+        <ul>
+            <li>Home</li>
+            <li>about</li>
+            <li>contact</li>
+        </ul>
+
+        <div>
+            <form action="./logout" method="get">
+                <button type="submit" class="logout-btn"> log out </button>
+            </form>
+        </div>
+    </nav>
    
-    home page
+    <div class="today-date">
+        <h1>To day date comes hear </h1>
+    </div>
 
-    <form action="/createHabit" method="post">
-        <label for="habit">enter your habit</label>
-        <input type="text" name="habit" id="habit">
-        <select name="frequency" id="frequency"> frequency
-            <option value="Daily">Daily</option>
-            <option value="Weekly">Weekly</option>
-            <option value="Monthly">Monthly</option>
-        </select>
-        <button type="submit">craeate habit</button>
-    </form>
+    <div class="habit-create-controller">
+        <form action="/createHabit" method="post" class="createHabit">
 
-    <form action="/habitcompleted" method="post">
-        
-        <button type="submit"> completed this</button>
+            <div class="input-field">
+                <input type="text" name="habit" class="input" id="habit" placeholder="  Add new habit...">
+            </div>
+            <button type="submit" class="create-btn">Add</button>
 
-    </form>
+            <select name="frequency" id="frequency"> frequency
+                <option value="Daily">Daily</option>
+                <option value="Weekly">Weekly</option>
+                <option value="Monthly">Monthly</option>
+            </select>
+
+        </form>
+    </div>
+
+    <h1 class="today-h1">TASKS FOR TODAY </h1>
+
 
 
     <div class="habits-list">
 
         <ul class="habitslist">
-            <li class="lists"></li>
-            <form action=""> 
-                <button></button>
-            </form>
+
+            <div class="habit-controller">
+                <p>logo</p>
+                <li class="lists">drink milk </li>
+                <form action="/habitcompleted" method="POST"><input type="hidden" name="habitId"
+                        value="6907054f11fed1ed49861d69"><button type="submit" class="complete-button">Completed</button></form>
+            </div>
+
         </ul>
 
     </div>
 
-    <div class="analytics">
-                
-        <form action="/any" method="POST">
-            <!--we added the input hear becasuse with out any input the html making an get 
-            request to the broweser so we  added an input and we made it hidden   -->
-            <input type="hidden" name="something" >
+    <div class="completed-list-controller">
+
+        <h1>Today's Habit Completions</h1>
+        <hr>
+        <div class="completion-list-controller" id="completionList">Loading...
+
+
             
-            <button type="submit">post </button>
-        </form>
+
+        </div>
+
     </div>
 
-    <h1>Today's Habit Completions</h1>
-<div id="completionList">Loading...</div> 
+    <script src="./homepage.js"></script>
 
+</body>
 
-<script src="./homepage.js"></script>
-
-</body> 
 </html>

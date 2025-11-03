@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background: #000;
+
+
+}
+button:hover,
+#frequency:hover,
+.logout-btn:hover{
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+.navbar {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px 20px 20px 60px;
+    font-size: 20px;
+    border-bottom: 1px solid #222;
+}
+
+.navbar button {
+    font-size: 17px;
+    padding: 8px;
+    background: #000;
+    color: white;
+    border: 2px solid #222;
+    border-radius: 10px;
+}
+
+.navbar ul {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+.today-date{
+    margin-top: 5vh;
+    width: 70vw;
+margin-left: 4vw;
+    
+    }
+
+.habit-create-controller {
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+    margin: 5vh 0vh;
+}
+
+.input {
+    font-size: 17px;
+    position: relative;
+    background: transparent;
+    border: 2px solid white;
+    border-right: none;
+    color: white;
+    width: 50vw;
+    height: 50px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+}
+
+.createHabit {
+    display: flex;
+    align-items: center;
+
+
+}
+
+.bts-controller {
+    margin-top: 10px;
+}
+
+#frequency {
+    text-align: center;
+    font-size: 17px;
+    width: 100px;
+    height: 53px;
+    background: #000;
+    color: white;
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+.create-btn {
+    font-size: 16px;
+    width: 5vw;
+    height: 50px;
+    background: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 2px solid #ffffff;
+    border-left: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.today-h1 {
+    margin: 5vh 0vh;
+}
+
+.habit-controller {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 20px;
+    background: #000;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    width: 62vw;
+    height: 9vh;
+    font-size: 18px;
+    border: 1px solid #222;
+    border-radius: 15px;
+
+}
+
+.habits-list {
+    margin-bottom: 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 70vw;
+
+}
+
+.complete-button {
+    display: flex;
+    text-align: center;
+    /* width: 5vw;
+    height: 5vh; */
+    cursor: pointer;
+    color: white;
+    padding: 10px;
+    border: 2px solid #222;
+    background: #000;
+    border-radius: 10px;
+}
+
+.today-h1{
+    margin-left: 4vw;
+}
+.completed-list-controller {
+    border: 1px solid white;
+}

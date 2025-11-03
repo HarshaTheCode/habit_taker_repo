@@ -14,6 +14,15 @@ async function fetchHabits() {
     
     // Render each habit
     habits.forEach(habit => {
+      const gethabits=document.createElement('div')
+      gethabits.className='habit-controller';
+
+       
+
+      const logo=document.createElement('p')
+      logo.className="logo-img"
+      logo.textContent="logo"
+
         const listItem = document.createElement('li');
         listItem.className = 'lists';
         listItem.textContent = habit.habit;// Adjust according to your data structure
@@ -30,12 +39,14 @@ async function fetchHabits() {
 
         const button = document.createElement('button');
         button.setAttribute('type', 'submit'); 
-        button.textContent = 'Complete Habit'; 
+        button.textContent = 'Completed'; 
         button.classList.add('complete-button');
         
-        
-        habitsList.appendChild(listItem);
-        habitsList.appendChild(form)
+
+        habitsList.appendChild(gethabits)
+        gethabits.appendChild(logo)
+        gethabits.appendChild(listItem);
+        gethabits.appendChild(form)
         form.appendChild(hiddenInput)
         form.appendChild(button)
     });
@@ -45,10 +56,6 @@ async function fetchHabits() {
 document.addEventListener('DOMContentLoaded', fetchHabits);
 
 
-
-
-
-
 async function fetchCompletions() {
   
     // 👇 Update your backend URL and email if needed
@@ -56,10 +63,8 @@ async function fetchCompletions() {
     const data = await res.json();
 
     const list = document.getElementById("completionList");
-    list.innerHTML = ""; // clear old data
-
     
-  
+    list.innerHTML = ""; // clear old data
 
     // Display total completions
     const total = document.createElement("h3");
@@ -70,28 +75,34 @@ async function fetchCompletions() {
     data.info.forEach(item => {
       const card = document.createElement("div");
       card.className = "card";
+      const Ullist=document.createElement('ul');
 
-      const habit = document.createElement("div");
+      const habit = document.createElement("li");
       habit.className = "habit";
       habit.textContent = `Habit: ${item.habit.habit}`;
+      
 
-      const freq = document.createElement("div");
+
+      const freq = document.createElement("li");
+      freq.className = "frequency";
       freq.textContent = `Frequency: ${item.habit.frequency}`;
 
-      const user = document.createElement("div");
+      const user = document.createElement("li");
+      user.className = "username";
       user.textContent = `User: ${item.user.username}`;
 
-      const date = document.createElement("div");
+      const date = document.createElement("li");
       date.className = "date";
       date.textContent = `Completed at: ${new Date(item.completedAt).toLocaleString()}`;
 
       const brake=document.createElement("hr")
 
 
-      card.appendChild(habit);
-      card.appendChild(freq);
-      card.appendChild(user);
-      card.appendChild(date);
+      card.appendChild(Ullist);
+      Ullist.appendChild(habit);
+      Ullist.appendChild(freq);
+      Ullist.appendChild(user);
+      Ullist.appendChild(date);
       list.appendChild(card);
       list.appendChild(brake);
 
