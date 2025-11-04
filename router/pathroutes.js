@@ -14,10 +14,6 @@ import { getDailyAnalytics } from '../Database/anayletics.js';
 export const routes = express.Router();
 const __dirname = import.meta.dirname;
 
-
-
-
-
 routes.get('/', (req, res) => {
      const filepath=path.join(__dirname,'../public', 'landing.html')
     res.sendFile(filepath)
@@ -111,14 +107,14 @@ routes.post('/createHabit', (req, res) => {
     createHabit(req, res);
     console.log("Habit crated ")
     const filepath= path.join(__dirname,'../public','homepage.html')
-    res.sendFile(filepath)
+    res.redirect('/home')
 })
 
 routes.post('/habitcompleted',(req,res)=>{
 
     completedHabit(req,res);
     const filepath= path.join(__dirname,'../public','homepage.html')
-    res.redirect('/homepage.html')
+    res.redirect('/home')
 })
 
 routes.get('/habitsData', async(req,res)=>{
@@ -126,7 +122,6 @@ routes.get('/habitsData', async(req,res)=>{
     res.send(ids)
 })
 
-// Add this alongside your existing GET route
 routes.get('/any', async(req,res)=>{
   console.log("data fetching from POST")
     const info =await getDailyAnalytics(req,res);
@@ -135,11 +130,9 @@ routes.get('/any', async(req,res)=>{
   res.send({info, completions})
 });
 
-
-
 routes.post('/deletehabit',(req,res)=>{
     console.log("running")
     deletedHabit(req,res);
     const filepath= path.join(__dirname,'../public','homepage.html')
-    res.sendFile(filepath)
+    res.redirect('/home')
 })
